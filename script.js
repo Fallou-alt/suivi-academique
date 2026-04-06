@@ -76,7 +76,7 @@ function displayAllNotes() {
     list.innerHTML = "";
     students.forEach(s => {
         let li = document.createElement("li");
-        li.textContent = fullName(s) + " → " + (s.notes.length ? s.notes.join(", ") : "aucune note");
+        li.textContent = fullName(s) + " - " + (s.notes.length ? s.notes.join(", ") : "aucune note");
         list.appendChild(li);
     });
 }
@@ -101,7 +101,7 @@ function displayAverage() {
     list.innerHTML = "";
     students.forEach(s => {
         let li = document.createElement("li");
-        li.textContent = fullName(s) + " — moyenne : " + average(s.notes) + "/20";
+        li.textContent = fullName(s) + " - moyenne : " + average(s.notes) + "/20";
         list.appendChild(li);
     });
 }
@@ -124,7 +124,7 @@ function ranking() {
     const medals = ["1.", "2.", "3."];
     sorted.forEach((s, i) => {
         let li = document.createElement("li");
-        li.textContent = (medals[i] || (i + 1) + ".") + " " + fullName(s) + " — " + average(s.notes) + "/20";
+        li.textContent = (i + 1) + ". " + fullName(s) + " - " + average(s.notes) + "/20";
         list.appendChild(li);
     });
 }
