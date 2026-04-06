@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi Académique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Suivi Académique</h1>
+    <p>Consultez et gérez les résultats de vos étudiants en toute simplicité</p>
+</header>
+
+<nav class="cards">
+    <a class="card" onclick="showSection('addStudent')">Nouvel étudiant</a>
+    <a class="card" onclick="showSection('deleteStudent')">Retirer un étudiant</a>
+    <a class="card" onclick="showSection('listStudent')">Tous les étudiants</a>
+    <a class="card" onclick="showSection('addNote')">Saisir une note</a>
+    <a class="card" onclick="showSection('deleteNote')">Effacer une note</a>
+    <a class="card" onclick="showSection('listNotes')">Toutes les notes</a>
+    <a class="card" onclick="showSection('studentNotes')">Notes par étudiant</a>
+    <a class="card" onclick="showSection('average')">Moyennes générales</a>
+    <a class="card" onclick="showSection('averageStudent')">Moyenne individuelle</a>
+    <a class="card" onclick="showSection('ranking')">Classement</a>
+</nav>
+
+<div class="container">
+
+    <section id="addStudent" class="hidden">
+        <h2>Nouvel étudiant</h2>
+        <input type="text" id="name" placeholder="Nom complet">
+        <button onclick="addStudent()">Enregistrer</button>
+    </section>
+
+    <section id="deleteStudent" class="hidden">
+        <h2>Retirer un étudiant</h2>
+        <input type="text" id="deleteName" placeholder="Nom complet">
+        <button onclick="deleteStudent()">Supprimer</button>
+    </section>
+
+    <section id="listStudent" class="hidden">
+        <h2>Tous les étudiants</h2>
+        <ul id="studentList"></ul>
+    </section>
+
+    <section id="addNote" class="hidden">
+        <h2>Saisir une note</h2>
+        <input type="text" id="noteStudent" placeholder="Nom de l'étudiant">
+        <input type="number" id="noteValue" placeholder="Note /20">
+        <button onclick="addNote()">Valider</button>
+    </section>
+
+    <section id="deleteNote" class="hidden">
+        <h2>Effacer une note</h2>
+        <input type="text" id="noteStudentDelete" placeholder="Nom de l'étudiant">
+        <button onclick="deleteNote()">Supprimer la dernière note</button>
+    </section>
+
+    <section id="listNotes" class="hidden">
+        <h2>Toutes les notes</h2>
+        <ul id="notesList"></ul>
+    </section>
+
+    <section id="studentNotes" class="hidden">
+        <h2>Notes par étudiant</h2>
+        <input type="text" id="searchStudent" placeholder="Nom de l'étudiant">
+        <button onclick="studentNotes()">Rechercher</button>
+        <p id="resultNotes"></p>
+    </section>
+
+    <section id="average" class="hidden">
+        <h2>Moyennes générales</h2>
+        <button onclick="displayAverage()">Afficher</button>
+        <ul id="averageList"></ul>
+    </section>
+
+    <section id="averageStudent" class="hidden">
+        <h2>Moyenne individuelle</h2>
+        <input type="text" id="avgStudent" placeholder="Nom de l'étudiant">
+        <button onclick="averageStudent()">Calculer</button>
+        <p id="avgResult"></p>
+    </section>
+
+    <section id="ranking" class="hidden">
+        <h2>Classement général</h2>
+        <ul id="rankingList"></ul>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

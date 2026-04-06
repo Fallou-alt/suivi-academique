@@ -1,0 +1,16 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "nom": "Dupont",
+      "prenom": "Lucas",
+      "notes": [14, 17, 12]
+    },
+    {
+      "id": 2,
+      "nom": "Martin",
+      "prenom": "Camille",
+      "notes": [11, 13, 15]
+    }
+  ]
+}
