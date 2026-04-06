@@ -2,8 +2,8 @@
   "students": [
     {
       "id": 1,
-      "nom": "Dupont",
-      "prenom": "Lucas",
+      "nom": "Ndiaye",
+      "prenom": "Ibrahima",
       "notes": [14, 17, 12]
     },
     {
