@@ -8,41 +8,52 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: #f4f6fb;
     color: #2d2d2d;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
     background: #ffffff;
-    padding: 36px 20px 24px;
+    padding: 28px 30px;
     border-bottom: 3px solid #e0e7ff;
+    text-align: center;
 }
 
 header h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #3b4cca;
     letter-spacing: 1px;
 }
 
 header p {
-    margin-top: 8px;
-    font-size: 1rem;
+    margin-top: 6px;
+    font-size: 0.95rem;
     color: #888;
 }
 
+.layout {
+    display: flex;
+    flex: 1;
+}
+
 .cards {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
-    padding: 28px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px 16px;
     background: #ffffff;
-    border-bottom: 1px solid #e8eaf6;
+    border-right: 2px solid #e0e7ff;
+    width: 210px;
+    min-height: 100%;
+    flex-shrink: 0;
 }
 
 .card {
     background: #f0f3ff;
     border: 1.5px solid #c5cae9;
-    padding: 16px 10px;
-    border-radius: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 0.88rem;
     font-weight: 600;
@@ -50,20 +61,20 @@ header p {
     text-decoration: none;
     display: block;
     transition: all 0.25s ease;
+    text-align: left;
 }
 
 .card:hover {
     background: #3b4cca;
     color: #ffffff;
     border-color: #3b4cca;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(59, 76, 202, 0.2);
+    transform: translateX(3px);
+    box-shadow: 4px 0 12px rgba(59, 76, 202, 0.15);
 }
 
 .container {
-    max-width: 680px;
-    margin: 30px auto;
-    padding: 0 20px 40px;
+    flex: 1;
+    padding: 30px;
 }
 
 section {
@@ -71,7 +82,9 @@ section {
     border: 1px solid #e0e7ff;
     border-radius: 16px;
     padding: 32px;
+    max-width: 600px;
     box-shadow: 0 4px 16px rgba(59, 76, 202, 0.07);
+    text-align: center;
 }
 
 section h2 {
@@ -151,18 +164,20 @@ p#resultNotes, p#avgResult {
 
 /* TABLETTE */
 @media (max-width: 1024px) {
-    .cards { grid-template-columns: repeat(3, 1fr); }
+    .cards { width: 180px; }
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    header h1 { font-size: 1.7rem; }
-    .cards { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 16px; }
+    .layout { flex-direction: column; }
+    .cards { flex-direction: row; flex-wrap: wrap; width: 100%; border-right: none; border-bottom: 2px solid #e0e7ff; padding: 12px; }
+    .card { flex: 1 1 calc(50% - 8px); text-align: center; }
+    header h1 { font-size: 1.6rem; }
     input { width: 90%; max-width: 300px; }
 }
 
 /* PETIT MOBILE */
 @media (max-width: 480px) {
-    .cards { grid-template-columns: 1fr; }
-    header h1 { font-size: 1.4rem; }
+    .card { flex: 1 1 100%; }
+    header h1 { font-size: 1.3rem; }
 }

@@ -1,0 +1,19 @@
+Suivi Académique — Fallou Ndiaye
+
+Lien du site : https://fallou-alt.github.io/suivi-academique/
+Lien du repo : https://github.com/Fallou-alt/suivi-academique
+
+---
+
+Dans ce TD, j'ai créé une page d'accueil de gestion des étudiants.
+
+La page contient 10 liens sous forme de cartes, chacun menant vers une fonctionnalité :
+- Ajouter / retirer un étudiant
+- Consulter la liste des étudiants
+- Saisir / effacer une note
+- Afficher toutes les notes ou celles d'un étudiant
+- Calculer les moyennes générales ou individuelles
+- Afficher le classement
+
+Les données initiales sont chargées depuis un fichier data.json via fetch().
+Le site est déployé sur GitHub Pages.
